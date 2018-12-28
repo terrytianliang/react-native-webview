@@ -56,15 +56,13 @@ repositories {
 
     // Stolen from react-native-firebase, thanks dudes!
     def found = false
-    def parentDir = rootProject.projectDir
     def reactNativeAndroidName = 'React Native (Node Modules)'
 
     1.upto(4, {
         if (found) return true
-        parentDir = parentDir.parentFile
         def reactNativeAndroid = new File(
-                parentDir,
-                'node_modules/react-native/android'
+                projectDir,
+                '../../..node_modules/react-native/android'
         )
 
         if (reactNativeAndroid.exists()) {
